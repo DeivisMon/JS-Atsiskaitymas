@@ -71,10 +71,6 @@ function renderMoviesList() {
                 <p>Seats available: ${seatsAvailable} / ${movie.seats}</p>
                 ${buttonSold}
             </div>
-<<<<<<< HEAD
-          
-=======
->>>>>>> my-new-branch
         `;
     }).join('');
 }

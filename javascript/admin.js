@@ -13,7 +13,7 @@ export function initAdminPanel() {
             <button id="addMovieFormBtn">Add Movies</button>
             <button id="showMoviesListBtn">Manage</button>
         </div>
-        <div id="adminInnerContent"></div>
+        <div id="adminInnerContent"></div>ZZ
     `;
 
     document.getElementById('addMovieFormBtn').addEventListener('click', addMovieForm);
