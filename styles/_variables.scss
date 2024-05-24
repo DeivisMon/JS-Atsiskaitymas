@@ -1,0 +1,35 @@
+$bckgLinear: linear-gradient(180deg, rgb(135, 129, 65), rgb(120, 5, 5));
+$bckgLinearOpac: linear-gradient(180deg, rgba(135, 129, 65, 0.8), rgba(120, 5, 5, 0.8));
+$bckgRedDark: radial-gradient(circle, rgba(117,18,18,1) 30%, rgba(20,6,9,1) 70%);
+
+@mixin border {
+  border-radius: 5px;
+  border: 2px solid #878141;
+}
+@mixin border-black {
+  border-radius: 5px;
+  border: 2px solid #565151;
+}
+@mixin d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin gradBckg {
+  content: '';
+  position: absolute;
+  width: 500px;
+  background-image: $bckgLinear;
+  height: 150%;
+  animation: rot 2s linear infinite;
+  transition: all 0.2s linear;
+  z-index: -1;
+}
+@mixin bckgAfter {
+  content: '';
+  position: absolute;
+  background: #0c0101;;
+  inset: 8px;
+  border-radius: 15px;
+  z-index: -1;
+}

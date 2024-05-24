@@ -1,0 +1,190 @@
+nav button {
+  color: white;
+  background: none;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  font-weight: bolder;
+  @include border;
+  transition: 0.2s ease-in;
+}
+nav button:hover {
+  background-color: #555;
+}
+
+.movie {
+  margin-bottom: 0.5em;
+  @include border;
+  width: 250px;
+  height: 300px;
+  text-align: center;
+  background: radial-gradient(circle, rgba(117,18,18,1) 30%, rgba(20,6,9,1) 70%);
+  box-shadow: 0 0 5px 1px #878141;
+  color: white;
+  position: relative;
+  animation: movie 1s ease-in-out infinite;
+  img {
+    transition: transform 0.5s ease;
+    width: 120px;
+    height: 180px;
+  }
+  button {
+    cursor: pointer;
+    background-color: rgba(141, 23, 23, 0);
+    border: 1px solid rgba(135, 129, 65, 0);
+    color: rgba(255, 255, 255, 0);
+    padding: 5px 20px;
+    transition: transform 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scaleY(0.5);
+    width: 100%;
+    height: 75px;
+  }
+  &:hover {
+    img {
+      transform: scale(1.12);
+    }
+    button {
+      background-color: rgba(141, 23, 23, 0.5);
+      border: 1px solid #878141;
+      color: white;
+      transform: translateX(-50%) translateY(-50%) scaleY(1);
+      &:hover {
+        background-color: rgba(141, 23, 23, 0.8);
+      }
+    }
+  }
+}
+.movieAdmin {
+  margin-bottom: 0.5em;
+  @include border;
+  width: 250px;
+  height: 300px;
+  text-align: center;
+  background: radial-gradient(circle, rgba(117,18,18,1) 30%, rgba(20,6,9,1) 70%);
+  box-shadow: 0 0 5px 1px #878141;
+  color: white;
+  position: relative;
+  img {
+    transition: transform 0.5s ease;
+    width: 120px;
+    height: 180px;
+  }
+  button {
+    cursor: pointer;
+    background-color: rgba(11, 1, 1, 0);
+    border: 1px solid rgba(135, 129, 65, 0);
+    color: rgba(255, 255, 255, 0);
+    padding: 5px 10px;
+    transition: 0.5s ease-in-out;
+    font-weight: bold;
+    font-size: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scaleY(0.5);
+    width: 125px;
+    height: 75px;
+  }
+  &:hover {
+    img {
+      transform: scale(1.12);
+    }
+    button {
+      background-color: rgb(11, 1, 1);
+      border: 1px solid #878141;
+      color: white;
+      transform: translateX(-50%) translateY(-50%) scaleY(1);
+      &:hover {
+        background-color: rgba(11, 1, 1, 0.7);
+      }
+    }
+  }
+}
+
+#deleteBtn {
+  left:62px;
+}
+#cancelBtn {
+  left: 187px;
+}
+
+@keyframes movie {
+  0% {
+    box-shadow: 0 0 5px 1px #878141;
+  }
+  50% {
+    box-shadow: 0 0 5px 4px #878141;
+  }
+  100% {
+    box-shadow: 0 0 5px 1px #878141;
+  }
+}
+
+.selectScreen, #adminControls, #userControls {
+  height: 70vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#userBtn, #adminBtn, #addMovieFormBtn, #showMoviesListBtn, #showMovieListBtn, #showReservationsListBtn {
+  width: 350px;
+  height: 350px;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  color: white;
+  font-size: 40px;
+  font-weight: bolder;
+  z-index: 1;
+  &:active {
+    transform: scale(0.98);
+  }
+  &::after {
+    @include bckgAfter;
+  }
+  &::before {
+    @include gradBckg;
+  }
+  &:hover::before {
+    animation: rot 0.5s linear infinite;
+    width: 600px;
+  }
+}
+@keyframes rot {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#cancelSeatsBtn, #reserveSeatsBtn, #submitBtn {
+  background-color: rgb(141, 23, 23);
+  border: 2px solid #878141;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 0  50px 50px;
+  margin: 0 50% 0 50% ;
+  transform: translateX(-50%);
+  padding: 15px 20px;
+  width: 300px;
+  &:hover {
+    background-color: rgb(106, 17, 17);
+  }
+  &:active {
+    width: 290px;
+  }
+}
+

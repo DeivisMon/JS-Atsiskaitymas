@@ -1,0 +1,274 @@
+@import "variables";
+@import "buttons";
+
+
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: black;
+  background-image: url("/img/background.png");
+  background-size: cover;
+  overflow:auto;
+}
+
+//Antrastes\\
+h1 {
+  color: rgba(255, 255, 255);
+  text-shadow: 3px 5px 2px #474747;
+  border-bottom: 3px solid #ffffff;
+  background-image: $bckgLinearOpac;
+  border-radius: 0 0 10px 10px;
+  padding: 0;
+  margin: 0;
+  font-size: 50px;
+  text-align: center;
+}
+h2 {
+  color: white;
+  border-bottom: 3px solid #ffffff;
+  background-image: $bckgLinearOpac;
+  border-radius: 0 0 10px 10px;
+  padding: 10px 100px 10px 100px;
+  margin: 0;
+  font-size: 30px;
+  text-align: center;
+}
+h4 {
+  color: white;
+  border-bottom: 3px solid #ffffff;
+  background-image: $bckgLinearOpac;
+  border-radius: 0 0 10px 10px;
+  font-size: 25px;
+  padding: 10px 90px 10px 90px;
+  margin: 0 10px 0 10px;
+  text-align: center;
+}
+h5 {
+  color: rgb(49, 5, 5);
+  border-top: 3px solid rgb(49, 5, 5);
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
+  margin: 0 auto 30px auto;
+  width: 250px;
+  text-align: center;
+  cursor: pointer;
+  animation: h5btn 2s ease infinite;
+}
+@keyframes h5btn {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.02);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+//\\------------//\\
+
+//navbaras, su juostele vaziuojancia\\
+nav {
+  height: 3em;
+  background-image: linear-gradient(-180deg, rgb(69, 3, 3), rgba(135, 129, 65, 0.7 ));
+  padding: 1em;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid rgba(135, 129, 65) ;
+  position: relative;
+  &::before {
+    content: "";
+    border-bottom: 2px solid rgba(69, 3, 3, 0.8);
+    width: 100px;
+    position: absolute;
+    bottom: -2px;
+    animation: navbarKit 10s ease-in-out infinite;
+  }
+}
+@keyframes navbarKit {
+  0% {
+    transform: translateX(-700px);
+  }
+  20% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(700px);
+  }
+  60% {
+    transform: translateX(-500px);
+  }
+  70% {
+    transform: translateX(0);
+  }
+  80% {
+    transform: translateX(500px);
+  }
+  100% {
+    transform: translateX(-700px);
+  }
+  
+}
+//\\------------//\\
+
+//Add movie forma\\
+#movieForm {
+  align-content: center;
+  width: 80%;
+  max-width: 50em;
+  background: $bckgRedDark;
+  box-shadow: 0 0 5px 1px #878141;
+  color: white;
+  font-size: 20px;
+  margin: 100px auto 0 auto;
+  padding: 50px 20px;
+  @include border;
+  @include d-flex;
+  flex-direction: column;
+}
+input {
+  display: block;
+  height: 2em;
+  //width: 40em;
+  //max-width: 40em;
+  font-size: 18px;
+  margin-bottom: 20px;
+  background: none;
+  color: white;
+  padding-left:  20px;
+  @include border;
+}
+//\\------------//\\
+
+#moviesList {
+  margin: 0 10px;
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+//Vietu rezervacijos ekranas\\
+.reserveSeats {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  img {
+    border: 10px inset #878141;
+    width: 380px;
+  }
+}
+.reserveSeatsBorder {
+  text-align: center;
+  background: rgb(117,18,18);
+  background: $bckgRedDark;
+  box-shadow: 0 0 5px 1px #878141;
+  width: 500px;
+  padding: 2em;
+  @include border;
+}
+#userReservationsList {
+  padding: 0 50px;
+}
+.yourReservations {
+  background: $bckgRedDark;
+  box-shadow: 0 0 5px 1px #878141;
+  border-radius:3px 3px 15px 15px;
+  border-bottom: 5px solid #878141;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 250px;
+  margin: 10px 100px;
+}
+//\\------------//\\
+
+//Transition effectai ekranams\\
+#adminContent, #adminInnerContent, #userContent, #userInnerContent  {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+#content {
+  width: 80%;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.hidden {
+  transform: scale(0.95) translateY(0);
+  opacity: 0;
+}
+//\\------------//\\
+
+//Kedes\\
+.seats-container {
+  flex-wrap: wrap-reverse;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 40em;
+  height:  39em;
+  background-image: url("/img/rug.png");
+  background-size: 75px;
+  background-position: center;
+  overflow: auto;
+  @include border;
+  @include d-flex;
+}
+.seat {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #050000;
+  margin: 1px;
+  text-align: center;
+  cursor: pointer;
+  background-image: url("/img/seat-not-selected.png");
+  background-position: center;
+  background-size: cover;
+}
+.seat.selected {
+  outline: 3px solid goldenrod;
+  outline-offset: -5px;
+  color: #fff;
+}
+.seat.reserved {
+  background-image: url("/img/seat-selected.png");
+  color: #fff;
+  cursor: not-allowed;
+}
+.seat.admin-reserved {
+  background-image: url("/img/seat.png");
+  color: #fff;
+  cursor: pointer;
+}
+//\\------------//\\
+
+
+//Responsive Form, svaigo\\
+@media (max-width: 999px) {
+  #movieForm {
+    width: 90%;
+    padding: 20px;
+  }
+  input {
+    font-size: 16px;
+    width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  #movieForm {
+    width: 95%;
+    padding: 10px;
+  }
+  input {
+    font-size: 14px;
+  }
+}

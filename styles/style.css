@@ -1,0 +1,479 @@
+nav button {
+  color: white;
+  background: none;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  font-weight: bolder;
+  border-radius: 5px;
+  border: 2px solid #878141;
+  transition: 0.2s ease-in;
+}
+
+nav button:hover {
+  background-color: #555;
+}
+
+.movie {
+  margin-bottom: 0.5em;
+  border-radius: 5px;
+  border: 2px solid #878141;
+  width: 250px;
+  height: 300px;
+  text-align: center;
+  background: radial-gradient(circle, rgb(117, 18, 18) 30%, rgb(20, 6, 9) 70%);
+  box-shadow: 0 0 5px 1px #878141;
+  color: white;
+  position: relative;
+  animation: movie 1s ease-in-out infinite;
+}
+.movie img {
+  transition: transform 0.5s ease;
+  width: 120px;
+  height: 180px;
+}
+.movie button {
+  cursor: pointer;
+  background-color: rgba(141, 23, 23, 0);
+  border: 1px solid rgba(135, 129, 65, 0);
+  color: rgba(255, 255, 255, 0);
+  padding: 5px 20px;
+  transition: transform 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scaleY(0.5);
+  width: 100%;
+  height: 75px;
+}
+.movie:hover img {
+  transform: scale(1.12);
+}
+.movie:hover button {
+  background-color: rgba(141, 23, 23, 0.5);
+  border: 1px solid #878141;
+  color: white;
+  transform: translateX(-50%) translateY(-50%) scaleY(1);
+}
+.movie:hover button:hover {
+  background-color: rgba(141, 23, 23, 0.8);
+}
+
+.movieAdmin {
+  margin-bottom: 0.5em;
+  border-radius: 5px;
+  border: 2px solid #878141;
+  width: 250px;
+  height: 300px;
+  text-align: center;
+  background: radial-gradient(circle, rgb(117, 18, 18) 30%, rgb(20, 6, 9) 70%);
+  box-shadow: 0 0 5px 1px #878141;
+  color: white;
+  position: relative;
+}
+.movieAdmin img {
+  transition: transform 0.5s ease;
+  width: 120px;
+  height: 180px;
+}
+.movieAdmin button {
+  cursor: pointer;
+  background-color: rgba(11, 1, 1, 0);
+  border: 1px solid rgba(135, 129, 65, 0);
+  color: rgba(255, 255, 255, 0);
+  padding: 5px 10px;
+  transition: 0.5s ease-in-out;
+  font-weight: bold;
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scaleY(0.5);
+  width: 125px;
+  height: 75px;
+}
+.movieAdmin:hover img {
+  transform: scale(1.12);
+}
+.movieAdmin:hover button {
+  background-color: rgb(11, 1, 1);
+  border: 1px solid #878141;
+  color: white;
+  transform: translateX(-50%) translateY(-50%) scaleY(1);
+}
+.movieAdmin:hover button:hover {
+  background-color: rgba(11, 1, 1, 0.7);
+}
+
+#deleteBtn {
+  left: 62px;
+}
+
+#cancelBtn {
+  left: 187px;
+}
+
+@keyframes movie {
+  0% {
+    box-shadow: 0 0 5px 1px #878141;
+  }
+  50% {
+    box-shadow: 0 0 5px 4px #878141;
+  }
+  100% {
+    box-shadow: 0 0 5px 1px #878141;
+  }
+}
+.selectScreen, #adminControls, #userControls {
+  height: 70vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#userBtn, #adminBtn, #addMovieFormBtn, #showMoviesListBtn, #showMovieListBtn, #showReservationsListBtn {
+  width: 350px;
+  height: 350px;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  color: white;
+  font-size: 40px;
+  font-weight: bolder;
+  z-index: 1;
+}
+#userBtn:active, #adminBtn:active, #addMovieFormBtn:active, #showMoviesListBtn:active, #showMovieListBtn:active, #showReservationsListBtn:active {
+  transform: scale(0.98);
+}
+#userBtn::after, #adminBtn::after, #addMovieFormBtn::after, #showMoviesListBtn::after, #showMovieListBtn::after, #showReservationsListBtn::after {
+  content: "";
+  position: absolute;
+  background: #0c0101;
+  inset: 8px;
+  border-radius: 15px;
+  z-index: -1;
+}
+#userBtn::before, #adminBtn::before, #addMovieFormBtn::before, #showMoviesListBtn::before, #showMovieListBtn::before, #showReservationsListBtn::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  background-image: linear-gradient(180deg, rgb(135, 129, 65), rgb(120, 5, 5));
+  height: 150%;
+  animation: rot 2s linear infinite;
+  transition: all 0.2s linear;
+  z-index: -1;
+}
+#userBtn:hover::before, #adminBtn:hover::before, #addMovieFormBtn:hover::before, #showMoviesListBtn:hover::before, #showMovieListBtn:hover::before, #showReservationsListBtn:hover::before {
+  animation: rot 0.5s linear infinite;
+  width: 600px;
+}
+
+@keyframes rot {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#cancelSeatsBtn, #reserveSeatsBtn, #submitBtn {
+  background-color: rgb(141, 23, 23);
+  border: 2px solid #878141;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 0 50px 50px;
+  margin: 0 50% 0 50%;
+  transform: translateX(-50%);
+  padding: 15px 20px;
+  width: 300px;
+}
+#cancelSeatsBtn:hover, #reserveSeatsBtn:hover, #submitBtn:hover {
+  background-color: rgb(106, 17, 17);
+}
+#cancelSeatsBtn:active, #reserveSeatsBtn:active, #submitBtn:active {
+  width: 290px;
+}
+
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: black;
+  background-image: url("/img/background.png");
+  background-size: cover;
+  overflow: auto;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  text-shadow: 3px 5px 2px #474747;
+  border-bottom: 3px solid #ffffff;
+  background-image: linear-gradient(180deg, rgba(135, 129, 65, 0.8), rgba(120, 5, 5, 0.8));
+  border-radius: 0 0 10px 10px;
+  padding: 0;
+  margin: 0;
+  font-size: 50px;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  border-bottom: 3px solid #ffffff;
+  background-image: linear-gradient(180deg, rgba(135, 129, 65, 0.8), rgba(120, 5, 5, 0.8));
+  border-radius: 0 0 10px 10px;
+  padding: 10px 100px 10px 100px;
+  margin: 0;
+  font-size: 30px;
+  text-align: center;
+}
+
+h4 {
+  color: white;
+  border-bottom: 3px solid #ffffff;
+  background-image: linear-gradient(180deg, rgba(135, 129, 65, 0.8), rgba(120, 5, 5, 0.8));
+  border-radius: 0 0 10px 10px;
+  font-size: 25px;
+  padding: 10px 90px 10px 90px;
+  margin: 0 10px 0 10px;
+  text-align: center;
+}
+
+h5 {
+  color: rgb(49, 5, 5);
+  border-top: 3px solid rgb(49, 5, 5);
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
+  margin: 0 auto 30px auto;
+  width: 250px;
+  text-align: center;
+  cursor: pointer;
+  animation: h5btn 2s ease infinite;
+}
+
+@keyframes h5btn {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.02);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+nav {
+  height: 3em;
+  background-image: linear-gradient(-180deg, rgb(69, 3, 3), rgba(135, 129, 65, 0.7));
+  padding: 1em;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid rgb(135, 129, 65);
+  position: relative;
+}
+nav::before {
+  content: "";
+  border-bottom: 2px solid rgba(69, 3, 3, 0.8);
+  width: 100px;
+  position: absolute;
+  bottom: -2px;
+  animation: navbarKit 10s ease-in-out infinite;
+}
+
+@keyframes navbarKit {
+  0% {
+    transform: translateX(-700px);
+  }
+  20% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(700px);
+  }
+  60% {
+    transform: translateX(-500px);
+  }
+  70% {
+    transform: translateX(0);
+  }
+  80% {
+    transform: translateX(500px);
+  }
+  100% {
+    transform: translateX(-700px);
+  }
+}
+#movieForm {
+  align-content: center;
+  width: 80%;
+  max-width: 50em;
+  background: radial-gradient(circle, rgb(117, 18, 18) 30%, rgb(20, 6, 9) 70%);
+  box-shadow: 0 0 5px 1px #878141;
+  color: white;
+  font-size: 20px;
+  margin: 100px auto 0 auto;
+  padding: 50px 20px;
+  border-radius: 5px;
+  border: 2px solid #878141;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  display: block;
+  height: 2em;
+  font-size: 18px;
+  margin-bottom: 20px;
+  background: none;
+  color: white;
+  padding-left: 20px;
+  border-radius: 5px;
+  border: 2px solid #878141;
+}
+
+#moviesList {
+  margin: 0 10px;
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.reserveSeats {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.reserveSeats img {
+  border: 10px inset #878141;
+  width: 380px;
+}
+
+.reserveSeatsBorder {
+  text-align: center;
+  background: rgb(117, 18, 18);
+  background: radial-gradient(circle, rgb(117, 18, 18) 30%, rgb(20, 6, 9) 70%);
+  box-shadow: 0 0 5px 1px #878141;
+  width: 500px;
+  padding: 2em;
+  border-radius: 5px;
+  border: 2px solid #878141;
+}
+
+#userReservationsList {
+  padding: 0 50px;
+}
+
+.yourReservations {
+  background: radial-gradient(circle, rgb(117, 18, 18) 30%, rgb(20, 6, 9) 70%);
+  box-shadow: 0 0 5px 1px #878141;
+  border-radius: 3px 3px 15px 15px;
+  border-bottom: 5px solid #878141;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 250px;
+  margin: 10px 100px;
+}
+
+#adminContent, #adminInnerContent, #userContent, #userInnerContent {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#content {
+  width: 80%;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.hidden {
+  transform: scale(0.95) translateY(0);
+  opacity: 0;
+}
+
+.seats-container {
+  flex-wrap: wrap-reverse;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 40em;
+  height: 39em;
+  background-image: url("/img/rug.png");
+  background-size: 75px;
+  background-position: center;
+  overflow: auto;
+  border-radius: 5px;
+  border: 2px solid #878141;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seat {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #050000;
+  margin: 1px;
+  text-align: center;
+  cursor: pointer;
+  background-image: url("/img/seat-not-selected.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.seat.selected {
+  outline: 3px solid goldenrod;
+  outline-offset: -5px;
+  color: #fff;
+}
+
+.seat.reserved {
+  background-image: url("/img/seat-selected.png");
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.seat.admin-reserved {
+  background-image: url("/img/seat.png");
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 999px) {
+  #movieForm {
+    width: 90%;
+    padding: 20px;
+  }
+  input {
+    font-size: 16px;
+    width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  #movieForm {
+    width: 95%;
+    padding: 10px;
+  }
+  input {
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
