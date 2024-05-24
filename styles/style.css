@@ -211,7 +211,7 @@ body {
   align-items: center;
   position: relative;
   background-color: black;
-  background-image: url("/img/background.png");
+  background-image: url("/img/background1.png");
   background-size: cover;
   overflow: auto;
 }
