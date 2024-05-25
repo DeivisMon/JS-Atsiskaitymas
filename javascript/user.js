@@ -88,7 +88,7 @@ function renderReservationsList() {
             </div>
         `;
     }).join('');
-    reservationsList.innerHTML = userReservations || '<p>You have no reservations.</p>';
+    reservationsList.innerHTML = userReservations || '<p style="color: white; font-size: 25px;">You have no reservations.</p>';
 }
 
 function openUserReservationPanel(movieIndex) {
