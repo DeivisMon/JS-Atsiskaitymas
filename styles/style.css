@@ -185,14 +185,16 @@ nav button:hover {
 }
 #cancelSeatsBtn, #reserveSeatsBtn, #submitBtn {
   background-color: rgb(141, 23, 23);
-  border: 2px solid #878141;
+  border-bottom: 4px solid #878141;
   color: white;
   cursor: pointer;
   border-radius: 0 0 50px 50px;
+  font-weight: bold;
   margin: 0 50% 0 50%;
   transform: translateX(-50%);
   padding: 15px 20px;
   width: 300px;
+  transition: 0.2s ease-in;
 }
 #cancelSeatsBtn:hover, #reserveSeatsBtn:hover, #submitBtn:hover {
   background-color: rgb(106, 17, 17);
@@ -235,7 +237,7 @@ h2 {
   border-radius: 0 0 10px 10px;
   padding: 10px 100px 10px 100px;
   margin: 0;
-  font-size: 30px;
+  font-size: 35px;
   text-align: center;
 }
 
@@ -326,7 +328,7 @@ nav::before {
   margin: 100px auto 0 auto;
   padding: 50px 20px;
   border-radius: 5px 5px 30px 30px;
-  border: 2px solid #878141;
+  border-bottom: 7px solid #878141;
   display: flex;
   justify-content: center;
   align-items: center;

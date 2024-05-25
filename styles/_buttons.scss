@@ -172,14 +172,16 @@ nav button:hover {
 
 #cancelSeatsBtn, #reserveSeatsBtn, #submitBtn {
   background-color: rgb(141, 23, 23);
-  border: 2px solid #878141;
+  border-bottom: 4px solid #878141;
   color: white;
   cursor: pointer;
   border-radius: 0 0  50px 50px;
+  font-weight: bold;
   margin: 0 50% 0 50% ;
   transform: translateX(-50%);
   padding: 15px 20px;
   width: 300px;
+  transition: 0.2s ease-in;
   &:hover {
     background-color: rgb(106, 17, 17);
   }
