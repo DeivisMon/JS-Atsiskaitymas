@@ -8,7 +8,8 @@ export function initReservationPanel(movieIndex, isAdmin) {
     const content = isAdmin ? document.getElementById('adminContent') : document.getElementById('userContent');
     const movies = loadData(moviesKey);
     const movie = movies[movieIndex];
-
+    content.classList.add('hidden');
+    setTimeout(() => {
     content.innerHTML = `
         <h2>${isAdmin ? 'Manage Reservations for' : 'Reserve Seats for'} ${movie.title}</h2>
         <h5 id="goBack" onclick="goBack(${isAdmin})">${isAdmin ? '<<< Back To Admin Panel >>>' : '<<< Back To User Zone >>>'}</h5>
@@ -26,17 +27,17 @@ export function initReservationPanel(movieIndex, isAdmin) {
     } else {
         document.getElementById('cancelSeatsBtn').addEventListener('click', () => cancelSelectedSeats(movieIndex));
     }
+        content.classList.remove('hidden');
+    }, 300)
 }
 
 function renderSeats(movie, movieIndex, isAdmin) {
     const seatsContainer = document.getElementById('seatsContainer');
     seatsContainer.innerHTML = '';
-
     for (let i = 1; i <= movie.seats; i++) {
         const seat = document.createElement('div');
         seat.className = 'seat';
         seat.innerText = i;
-
         if (movie.reservations.includes(i)) {
             seat.classList.add('reserved');
             if (isAdmin) {
