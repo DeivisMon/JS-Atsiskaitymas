@@ -2,8 +2,10 @@ import { loadData, saveData } from './storage.js';
 import { initAdminPanel } from './admin.js';
 import { initUserPanel} from './user.js';
 
+//ieskos localStorage key movies\\
 const moviesKey = 'movies';
 
+// Reservation screen\\
 export function initReservationPanel(movieIndex, isAdmin) {
     const content = isAdmin ? document.getElementById('adminContent') : document.getElementById('userContent');
     const movies = loadData(moviesKey);
@@ -31,6 +33,7 @@ export function initReservationPanel(movieIndex, isAdmin) {
     }, 300)
 }
 
+// Vietu containerio sukurimas ir vietu priskyrimas\\
 function renderSeats(movie, movieIndex, isAdmin) {
     const seatsContainer = document.getElementById('seatsContainer');
     seatsContainer.innerHTML = '';
@@ -53,10 +56,12 @@ function renderSeats(movie, movieIndex, isAdmin) {
     }
 }
 
+// Pasirinkti vieta\\
 function selectSeat(seat) {
     seat.classList.toggle('selected');
 }
 
+// Rezeruoti\\
 function reserveSeats(movieIndex) {
     const movies = loadData(moviesKey);
     const movie = movies[movieIndex];
@@ -68,6 +73,7 @@ function reserveSeats(movieIndex) {
     initReservationPanel(movieIndex, false);
 }
 
+// Atsaukti rezervacija\\
 function cancelSelectedSeats(movieIndex) {
     const movies = loadData(moviesKey);
     const movie = movies[movieIndex];
@@ -78,7 +84,7 @@ function cancelSelectedSeats(movieIndex) {
     initReservationPanel(movieIndex, true);
 }
 
-
+//Atgal i user ar admin panel\\
 function goBack(isAdmin) {
     if (isAdmin) {
         initAdminPanel();

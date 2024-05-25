@@ -4,7 +4,7 @@ import { initAdminPanel } from './admin.js';
 document.addEventListener('DOMContentLoaded', () => {
     initSelectScreen();
 });
-
+//Inicijuojam pirma screena\\
 export function initSelectScreen() {
     const content = document.getElementById('content');
     const userName = localStorage.getItem('myUser');
@@ -24,7 +24,7 @@ export function initSelectScreen() {
     }, 300);
 }
 
-
+// User select\\
 function initUserScreen() {
     const content = document.getElementById('content');
     content.classList.add('hidden');
@@ -42,6 +42,7 @@ function initUserScreen() {
     }, 300);
 }
 
+// Admin select\\
 function initAdminScreen() {
     const content = document.getElementById('content');
     content.classList.add('hidden');

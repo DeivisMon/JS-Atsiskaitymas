@@ -1,8 +1,10 @@
 import { saveData, loadData } from './storage.js';
 import { initReservationPanel } from './reservation.js';
 
+//ieskos localStorage key movies\\
 const moviesKey = 'movies';
 
+//Admin screen\\
 export function initAdminPanel() {
     const adminContent = document.getElementById('adminContent');
     adminContent.classList.add('hidden')
@@ -22,6 +24,7 @@ export function initAdminPanel() {
     }, 300);
 }
 
+// Filmu idejimo forma\\
 function addMovieForm() {
     const movies = loadData(moviesKey) || [];
     if (movies.length >= 10) {
@@ -50,7 +53,7 @@ function addMovieForm() {
     }, 300);
 }
 
-
+// Admin movie list to edit\\
 function createMoviesList() {
     hideAdminControls();
     const adminInnerContent = document.getElementById('adminInnerContent');
@@ -78,6 +81,7 @@ function createMoviesList() {
     }, 300);
 }
 
+// Prideti filma\\
 function addMovie(event) {
     event.preventDefault();
     const title = document.getElementById('title').value;
@@ -90,6 +94,7 @@ function addMovie(event) {
     createMoviesList();
 }
 
+// Istrinti filma\\
 function deleteMovie(movieIndex) {
     const movies = loadData(moviesKey);
     movies.splice(movieIndex, 1);
@@ -97,17 +102,18 @@ function deleteMovie(movieIndex) {
     createMoviesList();
 }
 
+//Nurodo kas atidaro reservation panel\\
 function openAdminReservationPanel(movieIndex) {
     initReservationPanel(movieIndex, true);
 }
 
+// Slepti admin controls, kai ju nereikia\\
 function hideAdminControls() {
     const adminControls = document.getElementById('adminControls');
     if (adminControls) {
         adminControls.style.display = 'none';
     }
 }
-
 
 window.deleteMovie = deleteMovie;
 window.openAdminReservationPanel = openAdminReservationPanel;

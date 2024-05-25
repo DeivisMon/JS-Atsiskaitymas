@@ -1,9 +1,10 @@
 import { initReservationPanel } from './reservation.js';
 import { loadData } from './storage.js';
 
-
+//ieskos localStorage key movies\\
 const moviesKey = 'movies';
 
+// User screen\\
 export function initUserPanel() {
     const userContent = document.getElementById('userContent');
     userContent.classList.add('hidden');
@@ -23,6 +24,7 @@ export function initUserPanel() {
     }, 300);
 }
 
+// Pries ikeliant user movie list\\
 function showMovieList() {
     hideUserControls()
     const userInnerContent = document.getElementById('userInnerContent');
@@ -39,22 +41,7 @@ function showMovieList() {
     }, 300);
 }
 
-function showReservationsList() {
-    hideUserControls()
-    const userInnerContent = document.getElementById('userInnerContent');
-    userInnerContent.classList.add('hidden');
-    setTimeout(() => {
-        userInnerContent.innerHTML = `
-            <h4>Your Reservations</h4>
-            <h5 id="backToUserBtn"><<< Back to User Zone >>></h5>
-            <div id="reservationsList"></div>
-        `;
-    document.getElementById('backToUserBtn').addEventListener('click', initUserPanel);
-    renderReservationsList();
-        userInnerContent.classList.remove('hidden');
-    }, 300);
-}
-
+// Sukuria user movie list\\
 function renderMoviesList() {
     const movies = loadData(moviesKey) || [];
     const limitedMovies = movies.slice(0, 10);
@@ -75,7 +62,24 @@ function renderMoviesList() {
     }).join('');
 }
 
+// Pries ikleiant reserved seats list\\
+function showReservationsList() {
+    hideUserControls()
+    const userInnerContent = document.getElementById('userInnerContent');
+    userInnerContent.classList.add('hidden');
+    setTimeout(() => {
+        userInnerContent.innerHTML = `
+            <h4>Your Reservations</h4>
+            <h5 id="backToUserBtn"><<< Back to User Zone >>></h5>
+            <div id="reservationsList"></div>
+        `;
+        document.getElementById('backToUserBtn').addEventListener('click', initUserPanel);
+        renderReservationsList();
+        userInnerContent.classList.remove('hidden');
+    }, 300);
+}
 
+// User reserved seats list\\
 function renderReservationsList() {
     const movies = loadData(moviesKey) || [];
     const reservationsList = document.getElementById('reservationsList');
@@ -91,10 +95,12 @@ function renderReservationsList() {
     reservationsList.innerHTML = userReservations || '<div style="color: white; font-size: 30px; text-align: center">You have no reservations.</div>';
 }
 
+//Nurodo kas atidaro reservation panel\\
 function openUserReservationPanel(movieIndex) {
     initReservationPanel(movieIndex, false);
 }
 
+// Slepti user controls, kai ju nereikia\\
 function hideUserControls() {
     const userControls = document.getElementById('userControls');
     if (userControls) {
