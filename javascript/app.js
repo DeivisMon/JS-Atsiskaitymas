@@ -21,7 +21,7 @@ export function initSelectScreen() {
         document.getElementById('userBtn').addEventListener('click', initUserScreen);
         document.getElementById('adminBtn').addEventListener('click', initAdminScreen);
         content.classList.remove('hidden');
-    }, 500);
+    }, 300);
 }
 
 

@@ -258,7 +258,7 @@ h5 {
   background-color: white;
   border-radius: 0 0 10px 10px;
   padding: 10px;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 20px auto;
   width: 250px;
   text-align: center;
   cursor: pointer;
@@ -358,14 +358,13 @@ input {
 }
 
 .reserveSeats {
-  margin-top: 30px;
   display: flex;
   justify-content: space-evenly;
+  align-items: start;
 }
 .reserveSeats img {
   border: 10px inset #878141;
   width: 380px;
-  margin-bottom: 30px;
 }
 
 .reserveSeatsBorder {
@@ -417,7 +416,7 @@ input {
   justify-content: space-around;
   align-items: baseline;
   width: 40em;
-  height: 39em;
+  height: 38.1em;
   background-image: url("../img/rug.png");
   background-size: 75px;
   background-position: center;
