@@ -363,6 +363,7 @@ input {
 .reserveSeats img {
   border: 10px inset #878141;
   width: 380px;
+  margin-bottom: 10px;
 }
 
 .reserveSeatsBorder {
@@ -390,8 +391,9 @@ input {
   font-size: 20px;
   align-items: center;
   justify-content: space-between;
-  padding: 0 250px;
+  padding: 0 100px;
   margin: 10px 100px;
+  text-align: center;
 }
 
 #adminContent, #adminInnerContent, #userContent, #userInnerContent {
@@ -458,6 +460,13 @@ input {
   cursor: pointer;
 }
 
+@media (max-width: 1250px) {
+  .reserveSeats {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
 @media (max-width: 999px) {
   #movieForm {
     width: 90%;
@@ -466,6 +475,9 @@ input {
   input {
     font-size: 16px;
     width: 400px;
+  }
+  .yourReservations {
+    display: block;
   }
 }
 @media (max-width: 768px) {
