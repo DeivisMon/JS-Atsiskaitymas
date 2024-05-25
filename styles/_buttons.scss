@@ -10,9 +10,9 @@ nav button {
   font-size: 17px;
   @include border;
   transition: 0.2s ease-in;
-}
-nav button:hover {
-  background-color: rgba(129, 138, 142, 0.5);
+  &:hover {
+    background-color: rgba(129, 138, 142, 0.5);
+  }
 }
 
 .movie {
@@ -24,8 +24,12 @@ nav button:hover {
   box-shadow: 0 0 5px 1px #878141;
   color: white;
   position: relative;
+  @include d-flex-sb-col;
   @include border;
   animation: movie 1s ease-in-out infinite;
+  p {
+    margin: 0 0 4px 0;
+  }
   img {
     transition: transform 0.5s ease;
     width: 120px;
@@ -72,7 +76,11 @@ nav button:hover {
   box-shadow: 0 0 5px 1px #878141;
   color: white;
   position: relative;
+  @include d-flex-sb-col;
   @include border;
+  p {
+    margin: 0 0 4px 0;
+  }
   img {
     transition: transform 0.5s ease;
     width: 120px;

@@ -12,7 +12,6 @@ nav button {
   border: 2px solid #878141;
   transition: 0.2s ease-in;
 }
-
 nav button:hover {
   background-color: rgba(129, 138, 142, 0.5);
 }
@@ -26,9 +25,16 @@ nav button:hover {
   box-shadow: 0 0 5px 1px #878141;
   color: white;
   position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
   border-radius: 5px;
   border: 2px solid #878141;
   animation: movie 1s ease-in-out infinite;
+}
+.movie p {
+  margin: 0 0 4px 0;
 }
 .movie img {
   transition: transform 0.5s ease;
@@ -74,8 +80,15 @@ nav button:hover {
   box-shadow: 0 0 5px 1px #878141;
   color: white;
   position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
   border-radius: 5px;
   border: 2px solid #878141;
+}
+.movieAdmin p {
+  margin: 0 0 4px 0;
 }
 .movieAdmin img {
   transition: transform 0.5s ease;
@@ -215,7 +228,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
   background-color: #f0f2f4;
   background-image: url("../img/background.png");
   background-size: cover;
@@ -243,6 +255,10 @@ h2 {
   margin: 0;
   font-size: 35px;
   text-align: center;
+}
+
+h3 {
+  margin: 5px 0 0 0;
 }
 
 h4 {

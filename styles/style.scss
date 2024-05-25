@@ -10,14 +10,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
   background-color: #f0f2f4;
   background-image: url("../img/background.png");
   background-size: cover;
   overflow:auto;
 }
 
-//Antrastes\\
+//H\\
 h1 {
   color: rgba(255, 255, 255);
   text-shadow: 3px 5px 2px #474747;
@@ -38,6 +37,9 @@ h2 {
   margin: 0;
   font-size: 35px;
   text-align: center;
+}
+h3 {
+  margin: 5px 0 0 0;
 }
 h4 {
   color: white;
