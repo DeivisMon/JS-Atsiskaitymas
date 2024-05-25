@@ -13,20 +13,20 @@ nav button {
 }
 
 nav button:hover {
-  background-color: #555;
+  background-color: rgba(129, 138, 142, 0.23);
 }
 
 .movie {
-  margin-bottom: 0.5em;
-  border-radius: 5px;
-  border: 2px solid #878141;
+  margin-bottom: 0.3em;
   width: 250px;
-  height: 300px;
+  height: 290px;
   text-align: center;
   background: radial-gradient(circle, rgb(117, 18, 18) 30%, rgb(20, 6, 9) 70%);
   box-shadow: 0 0 5px 1px #878141;
   color: white;
   position: relative;
+  border-radius: 5px;
+  border: 2px solid #878141;
   animation: movie 1s ease-in-out infinite;
 }
 .movie img {
@@ -64,16 +64,16 @@ nav button:hover {
 }
 
 .movieAdmin {
-  margin-bottom: 0.5em;
-  border-radius: 5px;
-  border: 2px solid #878141;
+  margin-bottom: 0.3em;
   width: 250px;
-  height: 300px;
+  height: 290px;
   text-align: center;
   background: radial-gradient(circle, rgb(117, 18, 18) 30%, rgb(20, 6, 9) 70%);
   box-shadow: 0 0 5px 1px #878141;
   color: white;
   position: relative;
+  border-radius: 5px;
+  border: 2px solid #878141;
 }
 .movieAdmin img {
   transition: transform 0.5s ease;
