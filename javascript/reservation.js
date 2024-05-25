@@ -5,7 +5,6 @@ import { initUserPanel} from './user.js';
 const moviesKey = 'movies';
 
 export function initReservationPanel(movieIndex, isAdmin) {
-    console.log('isAdmin:', isAdmin);
     const content = isAdmin ? document.getElementById('adminContent') : document.getElementById('userContent');
     const movies = loadData(moviesKey);
     const movie = movies[movieIndex];
@@ -55,7 +54,6 @@ function renderSeats(movie, movieIndex, isAdmin) {
 
 function selectSeat(seat) {
     seat.classList.toggle('selected');
-    console.log('Seat selected:', seat.innerText);
 }
 
 function reserveSeats(movieIndex) {
