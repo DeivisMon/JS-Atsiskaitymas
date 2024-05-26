@@ -2,7 +2,7 @@ import { loadData, saveData } from './storage.js';
 import { initAdminPanel } from './admin.js';
 import { initUserPanel} from './user.js';
 
-//ieskos localStorage key movies\\
+//localStorage key movies\\
 const moviesKey = 'movies';
 
 // Reservation screen\\

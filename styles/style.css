@@ -400,10 +400,6 @@ input {
   border: 2px solid #878141;
 }
 
-#userReservationsList {
-  padding: 0 50px;
-}
-
 .yourReservations {
   background: radial-gradient(circle, rgb(117, 18, 18) 30%, rgb(20, 6, 9) 70%);
   box-shadow: 0 0 5px 1px #878141;
@@ -411,12 +407,12 @@ input {
   border-bottom: 5px solid #878141;
   color: white;
   display: flex;
-  font-size: 20px;
   align-items: center;
   justify-content: space-between;
-  padding: 0 100px;
-  margin: 10px 100px;
+  margin: 0 75px 10px 75px;
+  font-size: 20px;
   text-align: center;
+  padding: 0 200px;
 }
 
 #adminContent, #adminInnerContent, #userContent, #userInnerContent {
@@ -489,6 +485,9 @@ input {
     align-items: center;
     padding-bottom: 20px;
   }
+  .yourReservations {
+    padding: 0 100px;
+  }
 }
 @media (max-width: 999px) {
   #movieForm {
@@ -501,6 +500,7 @@ input {
   }
   .yourReservations {
     display: block;
+    padding-top: 10px;
   }
 }
 @media (max-width: 768px) {
@@ -511,6 +511,10 @@ input {
   input {
     font-size: 14px;
     width: 300px;
+  }
+  .yourReservations {
+    font-size: 14px;
+    padding: 5px 0;
   }
   #userBtn, #adminBtn, #addMovieFormBtn, #showMoviesListBtn, #showMovieListBtn, #showReservationsListBtn {
     font-size: 25px;
