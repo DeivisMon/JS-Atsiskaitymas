@@ -42,7 +42,7 @@ function addMovieForm() {
                 <form>
                     <input type="text" id="title" placeholder="Movie Title" required>
                     <input type="text" id="image" placeholder="Image URL" required>
-                    <input type="number" id="seats" max="30" placeholder="Number of Seats" required>
+                    <input type="number" id="seats" min="0" max="30" placeholder="Number of Seats" required>
                     <button id="submitBtn" type="submit">Add Movie</button>
                 </form>
             </div>
